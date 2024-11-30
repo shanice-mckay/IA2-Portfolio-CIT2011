@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Preset Society</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="C:\Users\shani\Downloads\University\year two\semester one\Web Programming CIT2011\2301556_IA2\Assets\images\ps_logo.png" alt="Preset Society Logo">
+            </div>
+            <div class="business-name">
+                <h1>Preset Society</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="checkout.html">Cart</a></li>
+                <li><a href="login.html">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cart">
+        <h1>Your Cart</h1>
+
+        <!-- Displaying cart items -->
+        <div id="cart-items"></div>
+
+        <!-- CSummary:subtotal, tax, total -->
+        <div id="checkout-summary">
+            <p><strong>Subtotal:</strong> $<span id="subtotal">0.00</span></p>
+            <p><strong>Tax (15%):</strong> $<span id="tax">0.00</span></p>
+            <p><strong>Total:</strong> $<span id="total">0.00</span></p>
+        </div>
+
+        <!-- Checkout and clear cart button-->
+        <div class="cart-buttons">
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            <button class="cancel-btn" onclick="cancelCart()">Clear Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Preset Society. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

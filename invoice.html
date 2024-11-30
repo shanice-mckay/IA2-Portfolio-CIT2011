@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice | Preset Society</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="C:\Users\shani\Downloads\University\year two\semester one\Web Programming CIT2011\2301556_IA2\Assets\images\ps_logo.png" alt="Preset Society Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="invoice">
+        <h1>Order Summary</h1>
+        <div id="invoice-details"></div>
+        <div class="order-meta">
+            <p><strong>Order Date:</strong> <span id="order-date"></span></p>
+            <p><strong>Transaction ID:</strong> <span id="transaction-id"></span></p>
+        </div>
+
+        <!-- buttons -->
+        <div class="invoice-actions">
+            <button class="download-btn" onclick="downloadInvoice()">Download Invoice</button>
+            <button class="home-btn" onclick="window.location.href='index.html'">Return to Home</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Preset Society. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
