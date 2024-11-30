@@ -40,7 +40,7 @@ body {
 /* Hero */
 .hero {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('C:/Users/shani/Downloads/University/year two/semester one/Web Programming CIT2011/2301556_IA2/Assets/images/hero_banner_index.png') center/cover no-repeat;
+                url('hero_banner_index.png') center/cover no-repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
