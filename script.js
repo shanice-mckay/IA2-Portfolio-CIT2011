@@ -8,14 +8,14 @@ function addToCart(productName, price) {
     localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
 }
 
-// update the cart display
+// Update the cart display
 function updateCart() {
     const cartItemsDiv = document.getElementById('cart-items');
     const subtotalElement = document.getElementById('subtotal');
     const taxElement = document.getElementById('tax');
     const totalElement = document.getElementById('total');
 
-    // conditional statement for function
+    // Conditional statement for function
     if (!cartItemsDiv || !subtotalElement || !taxElement || !totalElement) return;
 
     // Clear previous cart items
@@ -57,8 +57,7 @@ function checkout() {
     window.location.href = 'invoice.html'; // Redirect to invoice page
 }
 
-
-// cancel/clear the cart
+// Cancel/clear the cart
 function cancelCart() {
     if (confirm("Are you sure you want to clear your cart?")) {
         cart = []; // Clear the cart
@@ -67,7 +66,7 @@ function cancelCart() {
     }
 }
 
-// generate the invoice page
+// Generate the invoice page
 function generateInvoice() {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]'); // Retrieve cart data
     const invoiceDetailsDiv = document.getElementById('invoice-details');
@@ -85,7 +84,7 @@ function generateInvoice() {
     const orderDate = new Date().toLocaleDateString();
     orderDateElement.textContent = orderDate;
 
-    //generate random transaction ID
+    // Generate random transaction ID
     const transactionId = 'TXN' + Math.floor(Math.random() * 1000000);
     transactionIdElement.textContent = transactionId;
 
@@ -147,7 +146,7 @@ function downloadInvoice() {
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = `Invoice_${transactionId}.txt`; // File name for download
-    link.click(); // startthe download
+    link.click(); // Start the download
 }
 
 // Updates on the cart page
@@ -155,7 +154,7 @@ if (document.getElementById('cart-items')) {
     updateCart();
 }
 
-//invoice generates on the invoice page
+// Invoice generates on the invoice page
 if (window.location.pathname.includes('invoice.html')) {
     generateInvoice();
 }
@@ -163,15 +162,15 @@ if (window.location.pathname.includes('invoice.html')) {
 // Retrieve stored users from localStorage or initialize an empty array
 let users = JSON.parse(localStorage.getItem('users')) || [];
 
-// limit on number of attempts to login
+// Sts three ad the maximum number of attempts to login
 let loginAttempts = 0;
 const maxAttempts = 3;
 
-// login form submission
+// Login form submission
 const loginForm = document.getElementById('login-form');
 if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent the form from submitting
 
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
@@ -181,16 +180,39 @@ if (loginForm) {
 
         if (user) {
             alert('Login successful! Redirecting to the homepage...');
-            window.location.href = "index.html";
+            window.location.href = "index.html"; // Redirect to homepage after login
         } else {
             loginAttempts++;
             if (loginAttempts >= maxAttempts) {
                 alert('Maximum login attempts reached. Redirecting to the error page...');
-                window.location.href = "error.html";
+                window.location.href = "error.html"; // Redirect to error page if login attempts exceed limit
             } else {
                 document.getElementById('login-message').textContent =
                     `Invalid credentials. You have ${maxAttempts - loginAttempts} attempt(s) left.`;
             }
+        }
+    });
+}
+
+// Deals with the sign-up form submission
+const signupForm = document.getElementById('signup-form');
+if (signupForm) {
+    signupForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the form from submitting
+
+        const newUsername = document.getElementById('new-username').value;
+        const newPassword = document.getElementById('new-password').value;
+
+        // Validation check if the username already exists
+        const userExists = users.some(u => u.username === newUsername);
+
+        if (userExists) {
+            document.getElementById('signup-message').textContent = 'Username already exists. Please choose another.';
+        } else {
+            // Add the new user to the users array and save to localStorage
+            users.push({ username: newUsername, password: newPassword });
+            localStorage.setItem('users', JSON.stringify(users));
+            document.getElementById('signup-message').textContent = 'Account created successfully! You can now log in.';
         }
     });
 }
