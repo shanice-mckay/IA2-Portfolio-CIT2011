@@ -151,6 +151,70 @@ button, .cta-button {
     gap: 15px;
 }
 
+/* Buttons for Invoice Actions */
+.download-btn {
+    background-color: #FFD700;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #FFC107; /* Lighter gold color on hover */
+    color: white; /* White text for better contrast */
+}
+
+/* General Button Styling */
+button, .cta-button, .btn {
+    background-color: #FFD700;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Button Group Styling for Log In and Create Account */
+.login-create {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+}
+
+.login-create h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #171817; /* Forest green */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    background-color: #FFD700;
+    color: #333;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #FFC107;
+}
+
+
 /* About */
 .about-us {
     margin: 50px auto;
